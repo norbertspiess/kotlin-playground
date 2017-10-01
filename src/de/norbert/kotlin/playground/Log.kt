@@ -1,6 +1,6 @@
 package de.norbert.kotlin.playground;
 
-class Log {
+open class Log {
     constructor(data: String) {
         // code
     }
