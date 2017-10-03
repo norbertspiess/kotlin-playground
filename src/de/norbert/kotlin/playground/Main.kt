@@ -6,6 +6,7 @@ import de.norbert.kotlin.playground.companion.Companion
 import de.norbert.kotlin.playground.constructor.Constructor1
 import de.norbert.kotlin.playground.constructor.Constructor2
 import de.norbert.kotlin.playground.dataclass.User
+import de.norbert.kotlin.playground.extensions.removeFirstAndLastChar
 import de.norbert.kotlin.playground.flow.Flow
 import de.norbert.kotlin.playground.getter.setter.Person
 import de.norbert.kotlin.playground.singleton.Test
@@ -21,8 +22,8 @@ fun main(args: Array<String>) {
     dataClasses()
     singleton()
     companion()
+    extensions()
 }
-
 
 private fun flow() {
     val flow = Flow()
@@ -31,6 +32,7 @@ private fun flow() {
     flow.forLoop()
     flow.whenStatement("lorem")
 }
+
 
 private fun parameterAndConstructors() {
     Constructor1()
@@ -93,5 +95,13 @@ fun singleton() {
 
 fun companion() {
     Companion.callMe()
+}
+
+fun extensions() {
+    val myString = "Hello Everyone"
+    val result = myString.removeFirstAndLastChar()
+    println("First character is: $result")
+    // https://stackoverflow.com/questions/40598131/are-extension-methods-and-extension-properties-are-bad-practice
+    // https://www.philosophicalhacker.com/post/how-to-abuse-kotlin-extension-functions/
 }
 
