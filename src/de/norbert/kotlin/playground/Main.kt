@@ -9,6 +9,7 @@ import de.norbert.kotlin.playground.dataclass.User
 import de.norbert.kotlin.playground.extensions.removeFirstAndLastChar
 import de.norbert.kotlin.playground.flow.Flow
 import de.norbert.kotlin.playground.getter.setter.Person
+import de.norbert.kotlin.playground.overloading.operator.Point
 import de.norbert.kotlin.playground.singleton.Test
 import de.norbert.kotlin.playground.visibility.Base
 import de.norbert.kotlin.playground.visibility.Derived
@@ -23,6 +24,7 @@ fun main(args: Array<String>) {
     singleton()
     companion()
     extensions()
+    overloadingOperators()
 }
 
 private fun flow() {
@@ -32,7 +34,6 @@ private fun flow() {
     flow.forLoop()
     flow.whenStatement("lorem")
 }
-
 
 private fun parameterAndConstructors() {
     Constructor1()
@@ -103,5 +104,14 @@ fun extensions() {
     println("First character is: $result")
     // https://stackoverflow.com/questions/40598131/are-extension-methods-and-extension-properties-are-bad-practice
     // https://www.philosophicalhacker.com/post/how-to-abuse-kotlin-extension-functions/
+}
+
+fun overloadingOperators() {
+    println(Point(1, 1) + Point(1, 1))
+
+    // doesn't work until we provide minus() operator
+    //println(Point(1, 1) - Point(1,1))
+
+    // https://kotlinlang.org/docs/reference/operator-overloading.html
 }
 
