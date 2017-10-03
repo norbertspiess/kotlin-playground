@@ -1,5 +1,9 @@
 package de.norbert.kotlin.playground
 
+import de.norbert.kotlin.playground.constructor.Constructor1
+import de.norbert.kotlin.playground.constructor.Constructor2
+import de.norbert.kotlin.playground.flow.Flow
+import de.norbert.kotlin.playground.getter.setter.Person
 import de.norbert.kotlin.playground.visibility.Base
 import de.norbert.kotlin.playground.visibility.Derived
 
@@ -30,7 +34,7 @@ private fun getterAndSetter() {
     Person().lastName
     Person().firstName = "horstmann"
     // compile error as setter is private:
-    // Person().age=5
+    // `Person.kt`().age=5
 }
 
 private fun visibility() {

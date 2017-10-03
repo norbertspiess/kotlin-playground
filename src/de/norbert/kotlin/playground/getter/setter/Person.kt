@@ -1,4 +1,4 @@
-package de.norbert.kotlin.playground
+package de.norbert.kotlin.playground.getter.setter
 
 class Person {
     var firstName: String = "uwe"

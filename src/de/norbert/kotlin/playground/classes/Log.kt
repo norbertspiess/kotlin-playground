@@ -1,4 +1,4 @@
-package de.norbert.kotlin.playground;
+package de.norbert.kotlin.playground.classes;
 
 open class Log {
     constructor(data: String) {

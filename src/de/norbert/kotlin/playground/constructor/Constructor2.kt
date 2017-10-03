@@ -1,4 +1,4 @@
-package de.norbert.kotlin.playground
+package de.norbert.kotlin.playground.constructor
 
 class Constructor2(_firstName: String, _age: Int = 0) {
     val firstName = _firstName.capitalize()

@@ -1,4 +1,4 @@
-package de.norbert.kotlin.playground
+package de.norbert.kotlin.playground.constructor
 
 class Constructor1(private var prop1: String = "default", private var prop2: Int = 0, _param1: String = "default param value") {
 
