@@ -1,5 +1,6 @@
 package de.norbert.kotlin.playground
 
+import de.norbert.kotlin.playground.abstractions.Teacher
 import de.norbert.kotlin.playground.constructor.Constructor1
 import de.norbert.kotlin.playground.constructor.Constructor2
 import de.norbert.kotlin.playground.flow.Flow
@@ -12,6 +13,7 @@ fun main(args: Array<String>) {
     parameterAndConstructors()
     getterAndSetter()
     visibility()
+    abstractions()
 }
 
 private fun flow() {
@@ -47,4 +49,12 @@ private fun visibility() {
     derived.a
     derived.d
     // derived.c is not visible
+}
+
+fun abstractions() {
+    val t = Teacher("Hans")
+    t.displayJob("description")
+    t.displaySSN(124)
+    t.age=31
+    println("getting age: ${t.age}")
 }
