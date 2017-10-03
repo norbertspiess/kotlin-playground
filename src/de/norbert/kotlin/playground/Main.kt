@@ -2,6 +2,7 @@ package de.norbert.kotlin.playground
 
 import de.norbert.kotlin.playground.abstractions.IPerson
 import de.norbert.kotlin.playground.abstractions.Teacher
+import de.norbert.kotlin.playground.companion.Companion
 import de.norbert.kotlin.playground.constructor.Constructor1
 import de.norbert.kotlin.playground.constructor.Constructor2
 import de.norbert.kotlin.playground.dataclass.User
@@ -19,7 +20,9 @@ fun main(args: Array<String>) {
     abstractions()
     dataClasses()
     singleton()
+    companion()
 }
+
 
 private fun flow() {
     val flow = Flow()
@@ -60,14 +63,14 @@ fun abstractions() {
     val t = Teacher("Hans")
     t.displayJob("description")
     t.displaySSN(124)
-    t.age=31
+    t.age = 31
     println("getting age: ${t.age}")
 }
 
 fun dataClasses() {
     var user = User("Horst", 50)
     println("User: $user")
-    user = user.copy(age=18)
+    user = user.copy(age = 18)
     println("copied user: $user")
 
     val (name, age) = user // destructuring declaration
@@ -87,3 +90,8 @@ fun singleton() {
         }
     }
 }
+
+fun companion() {
+    Companion.callMe()
+}
+
