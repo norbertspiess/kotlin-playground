@@ -3,6 +3,7 @@ package de.norbert.kotlin.playground
 import de.norbert.kotlin.playground.abstractions.Teacher
 import de.norbert.kotlin.playground.constructor.Constructor1
 import de.norbert.kotlin.playground.constructor.Constructor2
+import de.norbert.kotlin.playground.dataclass.User
 import de.norbert.kotlin.playground.flow.Flow
 import de.norbert.kotlin.playground.getter.setter.Person
 import de.norbert.kotlin.playground.visibility.Base
@@ -14,6 +15,7 @@ fun main(args: Array<String>) {
     getterAndSetter()
     visibility()
     abstractions()
+    dataClasses()
 }
 
 private fun flow() {
@@ -36,7 +38,7 @@ private fun getterAndSetter() {
     Person().lastName
     Person().firstName = "horstmann"
     // compile error as setter is private:
-    // `Person.kt`().age=5
+    // User().age=5
 }
 
 private fun visibility() {
@@ -57,4 +59,14 @@ fun abstractions() {
     t.displaySSN(124)
     t.age=31
     println("getting age: ${t.age}")
+}
+
+fun dataClasses() {
+    var user = User("Horst", 50)
+    println("User: $user")
+    user = user.copy(age=18)
+    println("copied user: $user")
+
+    val (name, age) = user // destructuring declaration
+    println("$name - $age")
 }
