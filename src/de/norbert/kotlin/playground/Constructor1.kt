@@ -5,6 +5,11 @@ class Constructor1(private var prop1: String = "default", private var prop2: Int
     init {
         println("params: " + _param1)
         println("fields: prop1=$prop1, prop2=$prop2")
+        Constructor1(5)
+    }
+
+    private constructor(foo: Int) : this() {
+        println("private")
     }
 
 }
