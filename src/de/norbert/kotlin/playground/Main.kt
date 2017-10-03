@@ -1,11 +1,13 @@
 package de.norbert.kotlin.playground
 
+import de.norbert.kotlin.playground.abstractions.IPerson
 import de.norbert.kotlin.playground.abstractions.Teacher
 import de.norbert.kotlin.playground.constructor.Constructor1
 import de.norbert.kotlin.playground.constructor.Constructor2
 import de.norbert.kotlin.playground.dataclass.User
 import de.norbert.kotlin.playground.flow.Flow
 import de.norbert.kotlin.playground.getter.setter.Person
+import de.norbert.kotlin.playground.singleton.Test
 import de.norbert.kotlin.playground.visibility.Base
 import de.norbert.kotlin.playground.visibility.Derived
 
@@ -16,6 +18,7 @@ fun main(args: Array<String>) {
     visibility()
     abstractions()
     dataClasses()
+    singleton()
 }
 
 private fun flow() {
@@ -69,4 +72,18 @@ fun dataClasses() {
 
     val (name, age) = user // destructuring declaration
     println("$name - $age")
+}
+
+fun singleton() {
+    var result = Test.makeMe12()
+
+    println("b = ${Test.b}")
+    println("result = $result")
+
+    val anonymousPerson = object : IPerson {
+        override var age: Int = 0
+        override fun displaySSN(ssn: Int) {
+            println("just nope")
+        }
+    }
 }
